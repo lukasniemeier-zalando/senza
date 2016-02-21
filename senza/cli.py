@@ -812,7 +812,7 @@ def init(definition_file, region, template, user_variable):
                           default='webapp')
 
     module = importlib.import_module('senza.templates.{}'.format(template))
-    variables = {}
+    variables = { 'definition_file': definition_file.name }
     for key_val in user_variable:
         key, val = key_val
         variables[key] = val
